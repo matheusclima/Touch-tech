@@ -1,11 +1,155 @@
-main a img {
-    width: 100px;
+main {
+    background-color: #D6D6D6;
+    padding: 1rem 0;
 }
 
-.container {
-    width: 100px;
+.departamentos {
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
 }
 
-.container img {
-    width: 100px;
+main section a {
+    display: flex;
+    flex-direction: column;
+    width: 6.25rem;
+    text-align: center;
+    color: black;
+    text-decoration: none;
 }
+
+.banner {
+    text-align: center;
+    margin: 2rem 0;
+    width: 100%;
+    position: relative;
+    object-fit: fill;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.banner a {
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.banner a:nth-child(1) {
+    left: 0;
+}
+
+.banner a:nth-child(2) {
+    right: 0;
+    /* transform: translate(50%, -50%); */
+}
+
+.destaques {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.destaques div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 35%;
+}
+
+.destaques div img {
+    background-color: white;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.destaques div > span:nth-child(3) {
+    font-size: 0.75rem;
+}
+
+.lista--produtos {
+    display: flex;
+    justify-content: flex-start;
+    row-gap: 3rem;
+    column-gap: 1rem;
+    padding: 2rem 1.5rem;
+    flex-wrap: wrap;
+}
+
+.card--produto, .card--produto > div {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-weight: 500;
+    width: 14.25rem;
+}
+
+.card--produto {
+    background-color: white;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 2px 2px 6px black;
+}
+
+.card--produto:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.card--produto img {
+    width: 100%;
+    align-self: center;
+    margin: 1rem 1.5rem;
+}
+
+.card--produto > div {
+    padding: 1rem 1.5rem;
+    background-color: var(--blue-bgcolor);
+    position: relative;
+}
+
+.product--title {
+    margin-bottom: 1rem;
+}
+
+.discount--price {
+    margin-bottom: 1rem;
+}
+
+.full--price {
+    font-size: 0.75rem;
+    font-weight: 300;
+}
+
+.ratings {
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+}
+
+.ratings i {
+    font-size: 0.5rem;
+    color: gold;
+}
+
+.ratings span {
+    font-size: 0.75rem;
+}
+
+.quantity {
+
+    padding: 0.375rem 0.25rem;
+    width: 25%;
+    aspect-ratio: 1;
+    background-color: white;
+    font-weight: normal;
+    color: black;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1rem;
+}
+

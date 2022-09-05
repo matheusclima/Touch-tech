@@ -1,94 +1,68 @@
 <!DOCTYPE html>
 <html lang='en'>
 
-<%- include('partials/head.ejs')  %> 
+    <%- include('partials/head.ejs')  %> 
 
-<body>
-    <%- include('partials/header.ejs') %> 
-    <main>
-        <section>
-            <a href="#"> <img src="/img/notebook.png" alt=""> Notebook</a>
-            <a href="#"> <img src="/img/notebook.png" alt=""> Computadores</a>
-            <a href="#"> <img src="/img/notebook.png" alt=""> Monitores</a>
-            <a href="#"> <img src="/img/notebook.png"alt=""> Acessorios</a>
-            <a href="#"> <img src="/img/notebook.png" alt=""> Console</a>
-            <a href="#"> <img src="/img/notebook.png" alt=""> Gadgets</a>
-        </section>
-        <section>
-            <img src="/img/notebook.png" alt="">
-        </section>
-        <section>
-            <span>Continue de onde parou</span>
-            <img src="/img/notebook.png" alt="">
-            <span>Notebook</span>
-            <span>Produto em destaque</span>
-            <img src="/img/notebook.png" alt="">
-            <span>Notebook</span>
-        </section>
-        <section>
-            <div class="container">
-                <img src="/img/notebook.png" alt="">
-                <span>Notebook</span>
-                <span>R$1.000,00</span>
-                <i class="bi bi-star"></i>
-            </div>
-            <div class="container">
-                <img src="/img/notebook.png" alt="">
-                <span>Notebook</span>
-                <span>R$1.000,00</span>
-                <i class="bi bi-star"></i>
-            </div>
-            <div class="container">
-                <img src="/img/notebook.png" alt="">
-                <span>Notebook</span>
-                <span>R$1.000,00</span>
-                <i class="bi bi-star"></i>
-            </div>
-            <div class="container">
-                <img src="/img/notebook.png" alt="">
-                <span>Notebook</span>
-                <span>R$1.000,00</span>
-                <i class="bi bi-star"></i>
-            </div>
-            <div class="container">
-                <img src="/img/notebook.png" alt="">
-                <span>Notebook</span>
-                <span>R$1.000,00</span>
-                <i class="bi bi-star"></i>
-            </div>
-            <div class="container">
-                <img src="/img/notebook.png" alt="">
-                <span>Notebook</span>
-                <span>R$1.000,00</span>
-                <i class="bi bi-star"></i>
-            </div>
-            <div class="container">
-                <img src="/img/notebook.png" alt="">
-                <span>Notebook</span>
-                <span>R$1.000,00</span>
-                <i class="bi bi-star"></i>
-            </div>
-            <div class="container">
-                <img src="/img/notebook.png" alt="">
-                <span>Notebook</span>
-                <span>R$1.000,00</span>
-                <i class="bi bi-star"></i>
-            </div>
-            <div class="container">
-                <img src="/img/notebook.png" alt="">
-                <span>Notebook</span>
-                <span>R$1.000,00</span>
-                <i class="bi bi-star"></i>
-            </div>
-            <div class="container">
-                <img src="/img/notebook.png" alt="">
-                <span>Notebook</span>
-                <span>R$1.000,00</span>
-                <i class="bi bi-star"></i>
-            </div>
-        </section>
+    <body>
+        <%- include('partials/header.ejs') %> 
+        <main>
+            <section class="departamentos">
+                <a href="#">
+                    <img src="/img/notebook.png" alt=""> 
+                    <span>
+                        Notebook
+                    </span>
+                </a>
+                <a href="#"> <img src="/img/notebook.png" alt=""> Computadores</a>
+                <a href="#"> <img src="/img/notebook.png" alt=""> Monitores</a>
+                <a href="#"> <img src="/img/notebook.png"alt=""> Acessorios</a>
+                <a href="#"> <img src="/img/notebook.png" alt=""> Console</a>
+                <a href="#"> <img src="/img/notebook.png" alt=""> Gadgets</a>
+            </section>
 
-    </main>
-    <%- include('partials/footer.ejs') %>
-</body>
+            <section class="banner">
+                <a href="/">&lt;</a>
+                <a href="/">&gt;</a>
+                <img src="/img/banner.svg" alt="Banner">
+            </section>
+
+            <section class="destaques">
+                <div>
+                    <span>Continue de onde parou</span>
+                    <img src="/img/notebook.png" alt="">
+                    <span>Notebook</span>
+                </div>
+                <div>
+                    <span>Produto em destaque</span>
+                    <img src="/img/notebook.png" alt="">
+                    <span>Notebook</span>
+                </div>
+            </section>
+
+            <section class="lista--produtos">
+                <% for( let index = 0; index < 10; index++ ) { %>
+                    <div class="card--produto">
+                        <img src="/img/notebook.png" alt="">
+                        <div>
+                            <span class="product--title">Notebook 4GB, SSD 250GB, i5, 16 polegadas, Samsung.</span>
+                            <span class="full--price">de R$ 1500,00</span>
+                            <span class="discount--price">R$1.000,00</span>
+                            <div class="ratings">
+                                <% for( let index = 0; index < 5; index++ ) { %>
+                                    <i class="bi bi-star-fill"></i>
+                                <% } %>
+                                <!-- Quantidade de votos -->
+                                <span>(1550)</span>
+                                <span class="quantity">Restam 1550 un.</span>       
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </section>
+
+        </main>
+
+        <%- include('partials/footer.ejs') %>
+
+    </body>
 </html>

@@ -4,17 +4,17 @@
         grid-template-areas:
             'img navtop'
             'img navbot';
-        background-color: #011C43;
-        opacity: 80%;
     }
     
     header img {
         grid-area: img;
         width: 100%;
+        opacity: 80%;
     }
     
     .nav {
         display: flex;
+        background-color: var(--blue-bgcolor);
         width: 90vw;
         align-items: center;
         padding: 0 2rem;
@@ -57,13 +57,9 @@
        color: white;
     } 
     
-    .navbar li a:hover {
-    }
-    
     .navbar li i {
         font-size: 2rem;
     }
-    
     
     .nav-bottom i {
         font-size: 0.75rem;
