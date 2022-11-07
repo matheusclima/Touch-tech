@@ -11,9 +11,37 @@
 <body>
     <%- include("partials/header.ejs") %>
     <main>
-        
-    </main>
+       <section>
+            <span>Já sou cadastrado</span>
+            <form action="/registro" method="post">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <label for="password">Senha</label>
+                <input type="password" name="Senha" id="password">
+            </form>
+            <a href="/resgatarsenha">Esqueceu sua senha?</a>
+            <button type="button">Login</button>
+       </section>
+            <span>Não sou cadastrado</span>
+            <form action="/registro" method="post">
+                <label for="name">Nome Completo</label>
+                <input type="name" name="Nome Completo" id="name">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <label for="password">Senha</label>
+                <input type="password" name="Senha" id="password">
+                <label for="password">Confirmação de Senha</label>
+                <input type="password" name="Confirmação Senha" id="password">
+            </form>
+            <button type="button">Cadastrar</button>
+       <section>
 
+
+       </section>
+    </main>
+    <footer>
+        <%- include("partials/footer.ejs") %>
+    </footer>
 </body>
 
 </html>
