@@ -16,5 +16,4 @@ app.use('/produtos', ProdutosRouter)
 app.use('/login', LoginRouter)
 
 
-
-
+app.listen(3000, console.log('Servidor rodando na porta 3000'));
