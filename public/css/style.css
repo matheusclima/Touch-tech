@@ -12,3 +12,7 @@ body {
     font-size: 16px;
 }
 
+main {
+    background-color: #D6D6D6;
+    padding: 1rem 0;
+}

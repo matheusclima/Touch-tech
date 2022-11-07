@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("partials/head.ejs") %>
+        <link rel="stylesheet" href="/css/listaProdutos.css">
+        <script src="/js/mostrarFiltros.js" defer></script>
+        <script src="/js/alterarQuantPorPag.js" defer></script>
+</head>
+
+<body>
+    <%- include("partials/header.ejs") %>
+
+        <main>
+            
+            <section class="seletores">
+                <% let totalDeProdutos=500 %>
+                    <span>
+                        <%= totalDeProdutos %> produtos
+                    </span>
+                    <div>
+                        <div class="d-inline-block">
+                            <label class="d-inline-block" for="ordenacao">
+                                <strong>Ordenar: </strong>
+                            </label>
+                            <select name="ordenacao" class="form-select d-inline-block" style="width: auto;">
+                                <option>Preço crescente</option>
+                                <option>Preço decrescente</option>
+                                <option>Nome A-Z</option>
+                                <option>Nome Z-A</option>
+                                <option>Quantidade</option>
+                            </select>
+                        </div>
+                        <div class="lista--quantidade">
+                            <form action="/produtos" method="GET" id="form--quantidade">
+                                <label class="d-inline-block" for="exibir">
+                                    <strong>Exibir:</strong>
+                                </label>
+                                <select name="exibir" 
+                                        class="form-select d-inline-block"
+                                        id="select--quantidade"
+                                        onchange="alterarQuantidade()">
+                                    <option value="10">10 por página</option>
+                                    <option value="20">20 por página</option>
+                                    <option value="50">50 por página</option>
+                                    <option value="75">75 por página</option>
+                                    <option value="100">100 por página</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+            </section>
+            <button type="button" class="btn btn-light mostrar--filtros">Filtros</button>
+            <section class="filtros--container">
+                <aside class="filtros" show="false">
+                    <span class="fechar--filtros">&times;</span>
+                    <% for( let index=0; index < 10; index++ ) { %>
+                        <details class="filtro">
+                            <summary>
+                                Categoria <%= index + 1 %>
+                            </summary>
+                            <div class="opcoes--filtro">
+                                <label>
+                                    <input type="checkbox" name="">
+                                    Opção 1
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="">
+                                    Opção 2
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="">
+                                    Opção 3
+                                </label>
+                            </div>
+                        </details>
+                        <% } %>
+                </aside>
+            </section>
+            <section class="lista--produtos">
+
+                <% for( let index=0; index < quantidadePorPagina; index++ ) { %>
+                    <div class="card--produto">
+                        <img src="/img/notebook.png" alt="">
+                        <div>
+                            <span class="product--title">Notebook 4GB, SSD 250GB, i5, 16 polegadas, Samsung.</span>
+                            <span class="full--price">de R$ 1500,00</span>
+                            <span class="discount--price">R$1.000,00</span>
+                            <div class="ratings">
+                                <% for( let index=0; index < 5; index++ ) { %>
+                                    <i class="bi bi-star-fill"></i>
+                                    <% } %>
+                                        <!-- Quantidade de votos -->
+                                        <span>(1550)</span>
+                                        <span class="quantity">Restam 1550 un.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+
+            </section>
+
+            <nav aria-label="Paginacao">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link">Previous</a>
+                    </li>
+                    <% for( let index=1; index <=5 ; index++ ) { %>
+                        <li class="page-item"><a class="page-link" href="#">
+                                <%= index%>
+                            </a></li>
+
+                    <% } %>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+
+        <%- include("partials/footer.ejs") %>
+</body>
+
+</html>
