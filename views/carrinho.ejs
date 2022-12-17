@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/carrinho.css">
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/home.css">
+    <%- include('partials/head.ejs')  %> 
+    <title>Carrinho</title>
+</head>
+<body>
+    <%- include('partials/header.ejs') %> 
+    <div class="cart_body">
+            <h1>Carrinho</h1>
+    </div>
+    <section class="produto">
+        <article class="produto_one">
+            <img src="/img/jeremy-bezanger-Jx-UX9zVdKk-unsplash.jpg" alt="Notebook imagem">
+            <h3> 
+                <a href="">
+                    Notebook 4GB, SSD 250GB <br>
+                i5, 16 Polegadas, Samsung.
+                </a>
+            </h3>
+                <p>
+                    Vendido e entregue por TouchTech company
+                </p>
+                <p class="container">
+                    Quant
+                </p>
+                <div class="counter">
+                    <button id="buttonDecrement"> - </button>
+                    <input type="text" value="0" disabled id="counterValue">
+                    <button id="buttonIncrement"> + </button>
+                </div>
+                <p class="color">
+                    Color: OFF White
+                </p>
+
+
+
+                <div>
+                    <script>
+                        const counter = document.querySelector('#counterValue')
+                        const buttonDecrement = document.querySelector('#buttonDecrement')
+                        const buttonIncrement = document.querySelector('#buttonIncrement')
+
+                        let value = counter.value
+
+                        buttonIncrement.addEventListener('click', ()=> {
+                            value = ++value
+                            counter.value = value
+                        })
+                        buttonDecrement.addEventListener('click', ()=>{
+                            value = value !== 0 ? --value : 0
+                            counter.value = value
+                        })
+                    </script>
+                </div>
+
+                <div class="preco">
+                    <p>
+                        Preço:
+                    </p>
+                    <p id="valor">
+                        De R$: 2500,56
+                    </p>
+                    <p id="valorAtual">
+                        Por: R$ 1000,00
+                    </p>
+                    <p id="inf">
+                        sem juros no cartão
+                    </p>
+                    <input type="text" name='Categoria' placeholder="Adicionar Seguro" onFocus="dropdown(0)" onBlur="dropdown(1)" class="inputpreco">
+                    <div class="dropdown">
+                        <div class="item" id="item-1" onmousedown="category(1)">Sim</div>
+                        <div class="item" id="item-2" onmousedown="category(2)">Não</div>
+                    </div>
+                </div>
+                <div>
+                    <script>
+                        function category(c){
+                            let item = document.getElementById('item-'+c).innerHTML
+                            document.getElementsByTagName('input')[1].value = item
+                        }
+                        function dropdown(p){
+                            let e = document.getElementsByClassName('dropdown')[0]
+                            let d = ['block', 'none']
+
+                            e.style.display = d[p]
+                            setTimeout(function (){
+                                 e.style.transform = 'translate(0px)'
+                            },0)
+                        }
+                        </script>
+                </div>
+        </article>
+        
+    </section> 
+    <br>
+
+    <hr color="#D4D4D4"/>
+
+    <br>
+    <article class="produto_one">
+        <img src="/img/jeremy-bezanger-Jx-UX9zVdKk-unsplash.jpg" alt="Notebook imagem">
+        <h3> 
+            <a href="">
+                Notebook 4GB, SSD 250GB <br>
+            i5, 16 Polegadas, Samsung.
+            </a>
+        </h3>
+            <p>
+                Vendido e entregue por TouchTech company
+            </p>
+            <p class="container">
+                Quant
+            </p>
+            <div class="counter">
+                <button id="buttonDecrement"> - </button>
+                <input type="text" value="0" disabled id="counterValue">
+                <button id="buttonIncrement"> + </button>
+            </div>
+            <p class="color">
+                Color: OFF White
+            </p>
+
+
+
+            <div>
+                <script>
+                    const counter = document.querySelector('#counterValue')
+                    const buttonDecrement = document.querySelector('#buttonDecrement')
+                    const buttonIncrement = document.querySelector('#buttonIncrement')
+
+                    let value = counter.value
+
+                    buttonIncrement.addEventListener('click', ()=> {
+                        value = ++value
+                        counter.value = value
+                    })
+                    buttonDecrement.addEventListener('click', ()=>{
+                        value = value !== 0 ? --value : 0
+                        counter.value = value
+                    })
+                </script>
+            </div>
+
+            <div class="preco">
+                <p>
+                    Preço:
+                </p>
+                <p id="valor">
+                    De R$: 2500,56
+                </p>
+                <p id="valorAtual">
+                    Por: R$ 1000,00
+                </p>
+                <p id="inf">
+                    sem juros no cartão
+                </p>
+                <input type="text" name='Categoria' placeholder="Adicionar Seguro" onFocus="dropdown(0)" onBlur="dropdown(1)" class="inputpreco">
+                <div class="dropdown">
+                    <div class="item" id="item-1" onmousedown="category(1)">Sim</div>
+                    <div class="item" id="item-2" onmousedown="category(2)">Não</div>
+                </div>
+            </div>
+            <div>
+                <script>
+                    function category(c){
+                        let item = document.getElementById('item-'+c).innerHTML
+                        document.getElementsByTagName('input')[1].value = item
+                    }
+                    function dropdown(p){
+                        let e = document.getElementsByClassName('dropdown')[0]
+                        let d = ['block', 'none']
+
+                        e.style.display = d[p]
+                        setTimeout(function (){
+                             e.style.transform = 'translate(0px)'
+                        },0)
+                    }
+                    </script>
+            </div>
+    </article>
+    <div class="entrega">
+        <p id="ent">
+            Opções de entrega
+        </p>
+        <div id="cep">
+            <label for="cep">CEP</label>
+            <input type="text" name="cep" id="cep">
+        </div>
+        <div id="esq">
+            <a href="">
+                <p>
+                Esqueci meu cep
+                </p>
+            </a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <%- include("partials/footer.ejs") %>
+    </footer>
+</body>
+</html>

@@ -1,6 +1,7 @@
 const express = require('express');
 const ProdutosRouter = require('./routers/ProdutosRouter')
 const LoginRouter = require('./routers/LoginRouter')
+const CarrinhoRouter = require('./routers/carrinhoRouter')
 
 const app = express();
 
@@ -15,5 +16,6 @@ app.use('/produtos', ProdutosRouter)
 
 app.use('/login', LoginRouter)
 
+app.use('/carrinho', CarrinhoRouter)
 
 app.listen(3000, console.log('Servidor rodando na porta 3000'));
